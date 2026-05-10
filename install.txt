@@ -1,0 +1,11 @@
+Linux/macOS:
+
+/path/to/code-wiki/scripts/install-llm-wiki.sh /path/to/project
+
+Windows PowerShell:
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\path\to\code-wiki\scripts\install-llm-wiki.ps1 C:\path\to\project
+
+Windows cmd:
+
+C:\path\to\code-wiki\scripts\install-llm-wiki.cmd C:\path\to\project

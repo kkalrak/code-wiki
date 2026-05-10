@@ -1,0 +1,41 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".codex/hooks/run-hook.sh session_start",
+            "timeout": 10,
+            "statusMessage": "Loading wiki context"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".codex/hooks/run-hook.sh user_prompt_submit",
+            "timeout": 10,
+            "statusMessage": "Recording prompt"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".codex/hooks/run-hook.sh wiki_stop",
+            "timeout": 10,
+            "statusMessage": "Checking wiki writeback"
+          }
+        ]
+      }
+    ]
+  }
+}
