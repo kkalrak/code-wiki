@@ -40,6 +40,22 @@ or:
 ./scripts/wiki-maintain.sh raw/codex/<session>.jsonl
 ```
 
+`scripts/wiki-maintain.sh` uses Codex, not Gemini. It invokes:
+
+```bash
+codex exec --skip-git-repo-check -C "$ROOT" "$prompt"
+```
+
+## Lint Command
+
+```bash
+./scripts/wiki-lint.sh
+```
+
+The wiki lint command is deterministic and does not use git. It reports broken internal links, adds missing or orphan pages to `wiki/index.md`, removes duplicate index links, and writes `wiki/lint-report.md`. It should not resolve knowledge conflicts, update stale facts, merge pages, or perform public-repository secret checks.
+
+Codex should run this command when the user asks for wiki lint in Korean or English, including "lint", "lint 하자", "린트해", or "위키 린트".
+
 ## Limitation
 
 Hooks are the right path for per-turn wiki maintenance, especially `Stop`. Official documentation notes that some tool interception is incomplete for shell paths and non-shell/non-MCP tools, so hooks should be treated as automation and guardrails rather than a perfect enforcement boundary.
@@ -62,7 +78,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\path\to\code-wiki\scr
 
 `scripts/install-llm-wiki.cmd` is a Windows `cmd.exe` wrapper around the PowerShell installer.
 
-The installers copy `.codex/`, `scripts/`, `AGENTS.md`, and starter `wiki/` pages. They skip existing files, so projects with existing Codex config should merge manually. The Windows installer writes a PowerShell-based `.codex/hooks.json` that calls `.codex/hooks/run-hook.ps1`; the Unix installer copies the repository's shell-based `.codex/hooks.json`.
+The installers copy `.codex/`, `scripts/`, `AGENTS.md`, and starter `wiki/` pages. They skip existing files, so projects with existing Codex config should merge manually. The Windows installer writes a PowerShell-based `.codex/hooks.json` that calls `.codex/hooks/run-hook.ps1`; the Unix installer copies the repository's shell-based `.codex/hooks.json`. Both installers copy `scripts/wiki-lint.sh`.
 
 ## Repository README
 

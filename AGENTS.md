@@ -17,3 +17,5 @@ Minimum writeback for a normal coding turn:
 - Update `wiki/index.md` when a new page is created.
 
 The wiki is not a transcript. It is the maintained state that future Codex sessions should read first.
+
+When the user asks to lint the wiki in Korean or English, including phrases like "lint", "lint 하자", "린트해", or "위키 린트", run `./scripts/wiki-lint.sh`. This lint is limited to deterministic wiki structure fixes: broken internal link reporting, index omissions, orphan page index additions, and duplicate index link removal. Do not include git checks in wiki lint.

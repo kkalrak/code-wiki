@@ -108,6 +108,7 @@ Copy-WikiFile (Join-Path $SourceRoot ".codex/hooks/session_start.py") (Join-Path
 Copy-WikiFile (Join-Path $SourceRoot ".codex/hooks/user_prompt_submit.py") (Join-Path $TargetRoot ".codex/hooks/user_prompt_submit.py")
 Copy-WikiFile (Join-Path $SourceRoot ".codex/hooks/wiki_stop.py") (Join-Path $TargetRoot ".codex/hooks/wiki_stop.py")
 Copy-WikiFile (Join-Path $SourceRoot "scripts/wiki-maintain.sh") (Join-Path $TargetRoot "scripts/wiki-maintain.sh")
+Copy-WikiFile (Join-Path $SourceRoot "scripts/wiki-lint.sh") (Join-Path $TargetRoot "scripts/wiki-lint.sh")
 Copy-WikiFile (Join-Path $SourceRoot "scripts/codex-wiki.sh") (Join-Path $TargetRoot "scripts/codex-wiki.sh")
 Copy-WikiFile (Join-Path $SourceRoot "scripts/install-llm-wiki.ps1") (Join-Path $TargetRoot "scripts/install-llm-wiki.ps1")
 Copy-WikiFile (Join-Path $SourceRoot "scripts/install-llm-wiki.cmd") (Join-Path $TargetRoot "scripts/install-llm-wiki.cmd")

@@ -32,6 +32,7 @@ copy_file "$SOURCE_ROOT/.codex/hooks/session_start.py" "$TARGET_ROOT/.codex/hook
 copy_file "$SOURCE_ROOT/.codex/hooks/user_prompt_submit.py" "$TARGET_ROOT/.codex/hooks/user_prompt_submit.py"
 copy_file "$SOURCE_ROOT/.codex/hooks/wiki_stop.py" "$TARGET_ROOT/.codex/hooks/wiki_stop.py"
 copy_file "$SOURCE_ROOT/scripts/wiki-maintain.sh" "$TARGET_ROOT/scripts/wiki-maintain.sh"
+copy_file "$SOURCE_ROOT/scripts/wiki-lint.sh" "$TARGET_ROOT/scripts/wiki-lint.sh"
 copy_file "$SOURCE_ROOT/scripts/codex-wiki.sh" "$TARGET_ROOT/scripts/codex-wiki.sh"
 copy_file "$SOURCE_ROOT/scripts/install-llm-wiki.ps1" "$TARGET_ROOT/scripts/install-llm-wiki.ps1"
 copy_file "$SOURCE_ROOT/scripts/install-llm-wiki.cmd" "$TARGET_ROOT/scripts/install-llm-wiki.cmd"
@@ -46,6 +47,7 @@ chmod +x \
   "$TARGET_ROOT/.codex/hooks/user_prompt_submit.py" \
   "$TARGET_ROOT/.codex/hooks/wiki_stop.py" \
   "$TARGET_ROOT/scripts/wiki-maintain.sh" \
+  "$TARGET_ROOT/scripts/wiki-lint.sh" \
   "$TARGET_ROOT/scripts/codex-wiki.sh"
 
 echo

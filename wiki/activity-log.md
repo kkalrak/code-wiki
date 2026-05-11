@@ -39,3 +39,11 @@ Chronological record of durable work sessions. Keep entries concise and link to 
 
 - Audited the committed public repository tree for API keys, tokens, passwords, private keys, credential files, email/phone/ID-number-like patterns, and long token-like strings.
 - Found no real secrets; found absolute local workspace path examples and replaced them with generic `/path/to/code-wiki` examples.
+
+## 2026-05-11
+
+- Rechecked `scripts/wiki-maintain.sh` after the user flagged a stale Gemini assumption.
+- Confirmed `scripts/wiki-maintain.sh` invokes `codex exec --skip-git-repo-check -C "$ROOT" "$prompt"` and does not call Gemini.
+- Added `scripts/wiki-lint.sh` for deterministic LLM Wiki structure lint without git checks.
+- Defined Korean/English lint trigger phrases in `AGENTS.md`, including `lint`, `lint 하자`, `린트해`, and `위키 린트`.
+- Updated README and `wiki/codex-auto-wiki.md` with the lint command and scope.

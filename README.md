@@ -69,6 +69,14 @@ For one-off maintenance:
 ./scripts/wiki-maintain.sh raw/codex/<session>.jsonl
 ```
 
+For deterministic wiki structure lint:
+
+```bash
+./scripts/wiki-lint.sh
+```
+
+The lint pass reports broken internal links in `wiki/lint-report.md`, adds missing or orphan wiki pages to `wiki/index.md`, and removes duplicate index links. It intentionally does not inspect git state or repository publication hygiene.
+
 ## Important Limitation
 
 Codex hooks are suitable for automation and guardrails, but official documentation notes that not every tool path is fully interceptable. Treat the wiki hook as a practical writeback mechanism, not a security boundary.
